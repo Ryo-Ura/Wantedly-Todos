@@ -1,0 +1,47 @@
+.task-form{
+    display: flex;
+    flex-direction: column;
+    margin: .1rem;
+    section{
+        margin-top: 1rem;
+        padding: 0.3rem;
+        border-radius: 0.3rem;
+        border: 1px solid #ccc;
+    }
+    .task-form-title{
+        display: flex;
+        font-size: .08rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .task-form-name{
+        display: flex;
+        width: 12rem;
+        margin-bottom: .2rem;
+    }
+
+    .task-form-input-title{
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .task-form-note{
+        display: flex;
+        width: 18rem;
+        height: 4.5rem;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .task-form-input-button{
+        display: flex;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+    .task-form-input-button-submit{
+        width: 4rem;
+        align-content: center;
+    }
+}

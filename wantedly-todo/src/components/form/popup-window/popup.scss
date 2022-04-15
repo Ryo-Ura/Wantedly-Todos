@@ -1,0 +1,22 @@
+.ReactModal__Content{
+    width: 20vw;
+    height: 40vh;
+    left: 2.5rem;
+    right: 2.5rem;
+    top: 2.5rem;
+    bottom: 2.5rem;
+    margin: auto;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
