@@ -1,5 +1,5 @@
 // import React from 'react'
-// import './listArea.scss';
+import './listArea.scss';
 import Task from '../task-list/task/Task';
 // function ListArea() {
 //     const generateID = () => Math.random().toString(36).substring(5);
@@ -48,58 +48,62 @@ const reorder = (list, startIndex, endIndex) => {
     return result;
 };
 
-const ListArea = ({tasks}) => {
-    const [project, setProject] = useState(tasks)
+const ListArea = () => {
+    const generateID = () => Math.random().toString(36).substring(5);
+    
+    const [tasks, setTasks] = React.useState([
+        {key: generateID(), name: 'Task 1', dueDate: '2020-01-01', complete: false},
+        {key: generateID(), name: 'Task 2', dueDate: '2020-02-03', complete: false},
+        {key: generateID(), name: 'Task 3', dueDate: '2020-05-05', complete: true},
+        {key: generateID(), name: 'Task 4', dueDate: '2020-05-05', complete: true},
+    ])
     const onDragEnd = (result) => {
-        if (!result.destination) return;
-        if (result.destination.index === result.source.index) return;
-            const projects = reorder(project,result.source.index, result.destination.index);
+        if (!result.destination) 
+            return;
+        if (result.destination.index === result.source.index) 
+            return;
+        const projects = reorder(tasks,result.source.index, result.destination.index);
         //store reordered state.
-        setProject(projects)
+        setTasks(projects)
     }
     const handleChecked = (checked) => {
-        const newTask = tasks.map(project => {
-            if (project.id === checked.id) {
-                project.complete = !project.complete;
-            }
-            return project;
-            });
-            setProject(newTask);
-    }
-    return (
+        // console.log('clicked')
+        const newTask = tasks.map(task => {
 
-        <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="list">
-            {(provided) => (
-            <div
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-                style={{ border: "1px solid #242424", borderRadius: "5px" }}
-            >
-                {project && project.map((item, index) =>
-                    <Draggable draggableId={item.key} key={item.key} index={index}>
-                        {(provided) => (
-                        <div
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            {...provided.dragHandleProps}
-                        >
-                            <p style={{ color: "white"}}>
-                            
-                                <Task key={item.id}
-                                task={item} 
-                                onMarked={handleChecked}
-                                />
-                            
-                            </p>
-                        </div>
-                        )}
-                    </Draggable>)}
-                {provided.placeholder}
-            </div>
-            )}
-        </Droppable>
-        </DragDropContext>
+            if (task.key === checked.key) {
+                task.complete = !task.complete;
+            }
+            return task;
+        });
+        setTasks(newTask);
+    }
+
+    return (
+        <div className="container">
+
+            <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId="list">
+                {(provided) => (
+                <div
+                    className='panel'
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                    style={{ border: "1px solid #242424", borderRadius: "5px" }}
+                >
+                    {tasks && tasks.map((item, index) =>
+                        <Draggable draggableId={item.key} key={item.key} index={index}>
+                            {(provided) => (
+                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                                <Task key={item.key} task={item}  onMarked={handleChecked}/>
+                            </div>
+                            )}
+                        </Draggable>)}
+                    {provided.placeholder}
+                </div>
+                )}
+            </Droppable>
+            </DragDropContext>
+        </div>
     )
 }
 export default ListArea

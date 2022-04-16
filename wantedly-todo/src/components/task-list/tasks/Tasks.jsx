@@ -22,6 +22,7 @@ function Tasks() {
         <div>
             <ListArea 
                 tasks={tasks} 
+                
                 // onChecked={handleChecked}
                 // setTasks={setTasks}
             />

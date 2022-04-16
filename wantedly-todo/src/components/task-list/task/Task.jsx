@@ -1,5 +1,9 @@
 import React from 'react';
 import './task.scss';
+import MailIcon from '@mui/icons-material/Mail';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
+
 export default function Task({task, onMarked}) {
     const handleChange = () => {
         onMarked(task);
@@ -18,6 +22,18 @@ export default function Task({task, onMarked}) {
                 </div>
                 <div className='task-due-date'>
                     {task.dueDate}
+                </div>
+                <div className="items">
+                    <div className="item-container">
+                        {/* <MailIcon fontSize='medium'></MailIcon> */}
+                    </div>
+                    <div className="item-container">
+                        <DeleteOutlineIcon fontSize='large' className='delete-icon' onClick={handleChange} ></DeleteOutlineIcon>
+                    </div>
+                    <div className="item-container">
+                        <ModeEditIcon fontSize='medium' className='edit-icon' onClick={handleChange}></ModeEditIcon>
+                    </div>
+
                 </div>
 
             </div>
