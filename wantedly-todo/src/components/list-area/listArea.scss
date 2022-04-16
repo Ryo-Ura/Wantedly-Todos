@@ -1,66 +1,84 @@
 .container{
     width: 70%;
     display: flex;
+    align-items: center;
+    justify-content: center;
     .panel{
         background-color: #577b8b;
         width: 100%;
         height: 100%;
-        border-radius: 0.5rem;
+        border-radius: .5rem;
         display: flex;
         flex-direction: column;
         .panel-block{
             background-color: #204a8c;
-            height: 3rem;
-            margin: 0.5rem;
+            // height: 3rem;
+            margin: 1rem;
             border: 1px solid black;
-            border-radius: 0.5rem;
+            border-radius: .5rem;
             display: flex;
             flex-direction: column;
+            align-content: center;
             .container{
                 display: flex;
                 margin-top: .3rem;
+                // margin-left: 3rem;
                 align-items: center;
-            }
-            .check-box{
-                display: flex;
-                margin-top: .5rem;
-                margin-left: 1.5rem;
-                // width: 1rem;
-                height: 1rem;
-                size: 3rem;
-                cursor: pointer;
-                float: left;
-                width: auto;
-            }
-            .task-name{
-                display: flex;
-                float: left;
-                width: auto;
-                margin-left: 2rem;
-                align-self: center;
-            }
-            .task-due-date{
-                float: left;
-                display: flex;
-                margin-left: 2rem;
-                background-color: #5088a1;
-                border-radius: 2rem;
-                width: auto;
-            }
-            .items{
-                float: right;
-                display: flex;
-                align-items: center;
-                .item-container{
+
+            
+                .box{
                     display: flex;
-                    // background-color: red;
-                    float: right;
+                    background-color: yellow;
                     flex-direction: column;
-                    margin-left: 1rem;
-                    margin-right: 1rem;
+                    height: 1rem;
                     cursor: pointer;
-                    .delete-icon{
+                    float: left;
+                    width: 1rem;
+                    background-color: #044018;
+                    &.active{
+                        background-color: #07a33b;
+                    }
+                }
+                
+                .check-box{
+                    flex: .15;
+                    // display: flex;
+                    margin-left: 1.5rem;
+                    // width: auto;
+                    // height: 5%;
+                    // size: 6rem;
+                    cursor: pointer;
+                    float: left;
+                    // width: auto;
+                }
+                .task-name{
+                    position: relative;
+                    flex: .25;
+                    float: left;
+                    margin-left: 2rem;
+                    background-color: gray;
+                }
+                .task-due-date{
+                    float: left;
+                    flex: .25;
+                    margin-left: 2rem;
+                    background-color: #60a150;
+                    border-radius: 2rem;
+                }
+                .items{
+                    flex: .25;
+                    float: right;
+                    align-items: center;
+                    background-color: red;
+                    display: flex;
+                    flex-direction: row;
+                    margin-left: 2rem;
+                    .item-container{
+                        align-items: flex-end;
                         float: right;
+                        margin-right: 1rem;
+                        cursor: pointer;
+                        
                     }
                 }
             }
