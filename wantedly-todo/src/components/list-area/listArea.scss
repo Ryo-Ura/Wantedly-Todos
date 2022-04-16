@@ -1,0 +1,49 @@
+.panel{
+    background-color: gray;
+    width: 70%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    .panel-block{
+        background-color: #204a8c;
+        height: 3rem;
+        margin: 0.5rem;
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        .container{
+            display: flex;
+            margin-top: .3rem;
+            align-items: center;
+        }
+        .check-box{
+            display: flex;
+            margin-top: .5rem;
+            margin-left: 1.5rem;
+            // width: 1rem;
+            height: 1rem;
+            size: 3rem;
+            cursor: pointer;
+            float: left;
+            width: auto;
+        }
+        .task-name{
+            display: flex;
+            float: left;
+            width: auto;
+            margin-left: 2rem;
+            align-self: center;
+        }
+        .task-due-date{
+            float: left;
+            display: flex;
+            margin-left: 2rem;
+            background-color: #5088a1;
+            border-radius: 2rem;
+            width: auto;
+        }
+    }
+}
