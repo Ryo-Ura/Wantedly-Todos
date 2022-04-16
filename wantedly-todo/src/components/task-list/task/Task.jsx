@@ -1,6 +1,5 @@
 import React from 'react';
 import './task.scss';
-import MailIcon from '@mui/icons-material/Mail';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 
