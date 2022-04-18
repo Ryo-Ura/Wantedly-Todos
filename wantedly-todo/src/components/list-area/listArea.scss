@@ -4,26 +4,27 @@
     align-items: center;
     justify-content: center;
     .panel{
-        background-color: #577b8b;
+        background-color: #003c6a;
         border-radius: .5rem;
         display: flex;
         flex-direction: column;
         .panel-block{
-            background-color: #204a8c;
-            // height: 3rem;
+            transition: all 1s;
+            background-color: #004d81;
             margin: .5rem;
             border: 1px solid black;
             border-radius: .5rem;
             display: flex;
             flex-direction: column;
             align-content: center;
+            &.active{
+                background-color: #1f1b44;
+                opacity: .5;
+            }
             .container{
                 display: flex;
                 margin-top: .3rem;
-                // margin-left: 3rem;
                 align-items: center;
-
-            
                 .box{
                     display: flex;
                     background-color: yellow;
@@ -40,14 +41,9 @@
                 
                 .check-box{
                     flex: .15;
-                    // display: flex;
                     margin-left: 1.5rem;
-                    // width: auto;
-                    // height: 5%;
-                    // size: 6rem;
                     cursor: pointer;
                     float: left;
-                    // width: auto;
                 }
                 .task-name{
                     position: relative;
@@ -63,20 +59,25 @@
                     background-color: #60a150;
                     border-radius: 2rem;
                 }
-                .items{
+                .item-container{
                     flex: .25;
                     float: right;
                     align-items: center;
-                    background-color: red;
+                    // background-color: red;
                     display: flex;
                     flex-direction: row;
-                    margin-left: 2rem;
-                    .item-container{
+                    margin-left: 5rem;
+                    .item{
                         align-items: flex-end;
                         float: right;
                         margin-right: 1rem;
+                        margin-right: 1rem;
+                        border-radius: .5rem;
                         cursor: pointer;
-                        
+                        transition: all 1s;
+                        &:hover{
+                            background-color: #eb5656;
+                        }                        
                     }
                 }
             }

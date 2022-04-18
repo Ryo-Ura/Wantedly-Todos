@@ -1,11 +1,11 @@
 .ReactModal__Content{
     width: 20vw;
-    height: 40vh;
+    height: 30vh;
     left: 2.5rem;
     right: 2.5rem;
     top: 2.5rem;
     bottom: 2.5rem;
-    margin: auto;
+    margin: left;
 }
 
 .ReactModal__Overlay {
@@ -19,4 +19,14 @@
 
 .ReactModal__Overlay--before-close {
     opacity: 0;
+}
+
+.new-task{
+    color: #3145e3;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+
 }

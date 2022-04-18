@@ -1,6 +1,6 @@
 import './listArea.scss';
 import Task from '../task-list/task/Task';
-import React from 'react'
+import React from 'react';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 const reorder = (list, startIndex, endIndex) => {
@@ -10,7 +10,7 @@ const reorder = (list, startIndex, endIndex) => {
     return result;
 };
 
-const ListArea = ({tasks, setTasks, deleteTask}) => {
+const ListArea = ({tasks, setTasks, deleteTask, showTasks, handleEditTask}) => {
     const onDragEnd = (result) => {
         if (!result.destination) 
             return;
@@ -31,7 +31,6 @@ const ListArea = ({tasks, setTasks, deleteTask}) => {
 
     return (
         <div className="container">
-
             <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId="droppable">
                 {(provided) => (
@@ -41,11 +40,17 @@ const ListArea = ({tasks, setTasks, deleteTask}) => {
                     {...provided.droppableProps}
                     style={{ border: "1px solid #fff", borderRadius: "5px", width: "100%" }}
                 >
-                    {tasks && tasks.map((item, index) =>
+                    {tasks && showTasks.map((item, index) =>
                         <Draggable draggableId={item.key} key={item.key} index={index}>
                             {(provided) => (
                             <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-                                <Task key={item.key} task={item}  onMarked={handleChecked} deleteTask={deleteTask} />
+                                <Task 
+                                    key={item.key} 
+                                    task={item}  
+                                    onMarked={handleChecked} 
+                                    deleteTask={deleteTask} 
+                                    handleEditTask={handleEditTask}
+                                />
                             </div>
                             )}
                         </Draggable>)}

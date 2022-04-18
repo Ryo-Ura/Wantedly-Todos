@@ -3,13 +3,14 @@ import './popupContent.scss';
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-
-export default function PopupContent({setTasks, setIsOpen}) {
+export default function PopupContent({setTasks, setIsOpen,task}) {
     const [date, setDate] = React.useState(new Date());
     const [text, setText] = React.useState('');
+
     function submitHandler(e){
         e.preventDefault();
     }
+    
     const handleChange = e => setText(e.target.value);
     return (
         <form onSubmit={submitHandler}>
@@ -31,12 +32,9 @@ export default function PopupContent({setTasks, setIsOpen}) {
             </div>
             <input type="submit"
                 onClick={()=>{
-                    console.log('submit');
-
-                    setTasks( text, date.toLocaleDateString());
+                    setTasks( text, date.toLocaleDateString(), task);
                     setIsOpen(false)
                 }}
-                
             />
         </form>
     );
