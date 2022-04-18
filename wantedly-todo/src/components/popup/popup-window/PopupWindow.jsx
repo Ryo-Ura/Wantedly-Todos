@@ -18,7 +18,7 @@ const modalStyle = {
         overflow: "auto",
     }
 }
-export default function PopupWindow() {
+export default function PopupWindow({ setTasks}) {
     const [modalIsOpen, setIsOpen] = React.useState(false);
     return (
         <div className="Popup">
@@ -30,7 +30,11 @@ export default function PopupWindow() {
                 shouldCloseOnEsc={true}
             >
                 <button onClick={() => setIsOpen(false)}>Cancel</button>
-                <PopupContent/>
+                <PopupContent
+                    
+                    setTasks={setTasks}
+                    setIsOpen={setIsOpen}
+                />
             </Modal>
         </div>
     );

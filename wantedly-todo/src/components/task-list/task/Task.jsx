@@ -5,10 +5,14 @@ import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import Box from '@mui/material/Box';
 
 
-export default function Task({task, onMarked}) {
+export default function Task({task, onMarked, deleteTask}) {
     const handleChange = () => {
         onMarked(task);
     };
+    const handleDelete = () => {
+        deleteTask(task.key);
+    }
+
     return (
         <label className="panel-block">
             <div className="container">
@@ -16,10 +20,7 @@ export default function Task({task, onMarked}) {
                     <Box 
                     className = {task.complete ?  "box active" : "box"}
                     sx={{
-                        // width: 50,
-                        // height: 100,
                         border: '1px solid grey',
-                        // backgroundColor: '#f5f5f5',
                     }}
                     ></Box>
                 
@@ -41,7 +42,7 @@ export default function Task({task, onMarked}) {
                         {/* <MailIcon fontSize='medium'></MailIcon> */}
                     </div>
                     <div className="item-container">
-                        <DeleteOutlineIcon fontSize='large' className='delete-icon' onClick={handleChange} ></DeleteOutlineIcon>
+                        <DeleteOutlineIcon fontSize='large' className='delete-icon' onClick={handleDelete} ></DeleteOutlineIcon>
                     </div>
                     <div className="item-container">
                         <ModeEditIcon fontSize='medium' className='edit-icon' onClick={handleChange}></ModeEditIcon>
