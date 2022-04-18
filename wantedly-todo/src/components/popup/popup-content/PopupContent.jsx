@@ -1,32 +1,39 @@
 import React from 'react'
 import './popupContent.scss';
-import { useForm } from 'react-hook-form'
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
+export default function PopupContent({setTasks, setIsOpen,task}) {
+    const [date, setDate] = React.useState(new Date());
+    const [text, setText] = React.useState('');
 
-export default function PopupContent() {
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
-    function validate(value) {
-        // this validator is not working
-        if (value === '') {
-            console.log('Please enter a value');
-            return 'Required';
-        }
+    function submitHandler(e){
+        e.preventDefault();
     }
+    
+    const handleChange = e => setText(e.target.value);
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={submitHandler}>
             <div className="input-field">
                 <div>Task Name</div>
-                <input {...register("TaskName")} />
+                <input
+                    class="input"
+                    type="text"
+                    placeholder="Enter to add"
+                    value={text}
+                    onChange={handleChange}
+                />
             </div>
             <div className="input-field">
-                <div>Due date</div>
-                <input {...register("TaskDueDate")}  />
+                <section>
+                    <label className="task-form-input-title">Date</label>
+                    <ReactDatePicker selected={date} onChange={(date) => setDate(date)} />
+                </section>
             </div>
             <input type="submit"
                 onClick={()=>{
-                    console.log('submit');
-                    validate(handleSubmit('TaskName'))
+                    setTasks( text, date.toLocaleDateString(), task);
+                    setIsOpen(false)
                 }}
             />
         </form>
