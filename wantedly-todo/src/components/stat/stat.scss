@@ -1,0 +1,35 @@
+.stat-container{
+    color: white;
+    margin: -50%;
+    margin-right: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    border-radius: .5rem;
+    .header{
+        text-decoration: underline;
+    }
+    ul{
+        list-style-position: inside;
+        padding-left: 0;
+    }
+    li{
+        list-style-type: none;
+        margin-bottom: 1rem;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .total{
+        margin-bottom: 2.5rem;
+    }
+    .stat{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1rem;
+    }
+
+}

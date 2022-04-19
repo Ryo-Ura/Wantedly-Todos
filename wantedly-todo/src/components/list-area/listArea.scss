@@ -1,77 +1,83 @@
-.container{
-    width: 80%;
+.listarea-container{
+    // width: 90%;
     display: flex;
+    margin : 4rem;
     align-items: center;
     justify-content: center;
-    .panel{
-        background-color: #003c6a;
+    background-color: #4a6274;
+    border-radius: .5rem;
+    .listarea-panel{
+        align-items: center;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
         border-radius: .5rem;
         display: flex;
         flex-direction: column;
+        flex-grow: 0;
+        flex-basis: 0;
         .panel-block{
-            transition: all 1s;
-            background-color: #004d81;
-            margin: .5rem;
-            border: 1px solid black;
-            border-radius: .5rem;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             align-content: center;
-            &.active{
-                background-color: #1f1b44;
-                opacity: .5;
-            }
-            .container{
-                display: flex;
-                margin-top: .3rem;
+            justify-content: center;
+            flex-direction: row;
+    
+            .task-container{
+                align-content: center;
+                justify-content: center;
                 align-items: center;
-                .box{
-                    display: flex;
-                    background-color: yellow;
-                    flex-direction: column;
-                    height: 1rem;
-                    cursor: pointer;
-                    float: left;
-                    width: 1rem;
-                    background-color: #044018;
-                    &.active{
-                        background-color: #07a33b;
-                    }
-                }
+                // transition: all 1s;
+                // // background-color: #004d81;
+                // background-color: #275366;
+                // margin: .5rem;
+                // border: 1px solid black;
+                // border-radius: .5rem;
+                // display: flex;
+                // flex-direction: row;
                 
+        
+                // display: flex;
+                // margin-top: .3rem;
+                // align-items: center;
+                // margin-right: 1vw;
+                // margin-left: 1vw;
                 .check-box{
+                    align-items: center;
+                    justify-content: center;
+                    align-content: center;
                     flex: .15;
                     margin-left: 1.5rem;
                     cursor: pointer;
                     float: left;
+                    margin-top: .5rem;
                 }
                 .task-name{
                     position: relative;
                     flex: .25;
                     float: left;
-                    margin-left: 2rem;
-                    background-color: gray;
+                    margin-left: 1vw;
+                    min-width: 10vw;
+                    color: white;
                 }
                 .task-due-date{
                     float: left;
                     flex: .25;
-                    margin-left: 2rem;
-                    background-color: #60a150;
+                    color: beige;
+                    margin-left: 2vw;
                     border-radius: 2rem;
                 }
                 .item-container{
                     flex: .25;
                     float: right;
                     align-items: center;
-                    // background-color: red;
                     display: flex;
                     flex-direction: row;
-                    margin-left: 5rem;
                     .item{
                         align-items: flex-end;
                         float: right;
-                        margin-right: 1rem;
-                        margin-right: 1rem;
+                        margin-right: 1vw;
+                        margin-left: 1vw;
                         border-radius: .5rem;
                         cursor: pointer;
                         transition: all 1s;
@@ -80,7 +86,13 @@
                         }                        
                     }
                 }
+                &.active{
+                    background-color: #1f1b44;
+                    opacity: 0.2;
+                }
             }
         }
+        
+        
     }
 }

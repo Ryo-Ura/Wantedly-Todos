@@ -30,20 +30,20 @@ const ListArea = ({tasks, setTasks, deleteTask, showTasks, handleEditTask}) => {
     }
 
     return (
-        <div className="container">
+        <div className="listarea-container">
             <DragDropContext onDragEnd={onDragEnd}>
             <Droppable droppableId="droppable">
                 {(provided) => (
                 <div
-                    className='panel'
+                    className='listarea-panel'
                     ref={provided.innerRef}
                     {...provided.droppableProps}
-                    style={{ border: "1px solid #fff", borderRadius: "5px", width: "100%" }}
                 >
                     {tasks && showTasks.map((item, index) =>
                         <Draggable draggableId={item.key} key={item.key} index={index}>
                             {(provided) => (
-                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="listarea-task">
+                                
                                 <Task 
                                     key={item.key} 
                                     task={item}  

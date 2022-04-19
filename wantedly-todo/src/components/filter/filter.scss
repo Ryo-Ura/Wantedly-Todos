@@ -1,5 +1,6 @@
 .tabs{
     display: flex;
+    margin-top: 1rem;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -19,7 +20,6 @@
         transition: all 1s;
         &:hover{
             color: white;
-            // background-color: lightgray;
         }
     }
 }

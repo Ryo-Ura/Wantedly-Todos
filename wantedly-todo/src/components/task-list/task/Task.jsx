@@ -2,7 +2,7 @@ import React from 'react';
 import './task.scss';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import Modal from "react-modal";
 import PopupContent from '../../popup/popup-content/PopupContent';
 
@@ -34,15 +34,15 @@ export default function Task({key, task, onMarked, deleteTask, handleEditTask}) 
     const [modalIsOpen, setIsOpen] = React.useState(false);
     
     return (
-        <label className = {task.complete ?  "panel-block active" : "panel-block"}>
-            <div className="container">
+        <div className = {task.complete ?  "panel-block active" : "panel-block"}>
+            <div className="task-container">
                 
-                    <Box 
+                    {/* <Box 
                     className = {task.complete ?  "box active" : "box"}
                     sx={{
                         border: '1px solid grey',
                     }}
-                    ></Box>
+                    ></Box> */}
                 
                 <input 
                     className='check-box'
@@ -81,7 +81,7 @@ export default function Task({key, task, onMarked, deleteTask, handleEditTask}) 
                     </div>
                 </div>
             </div>
-        </label>
+        </div>
     );
 }
 

@@ -1,14 +1,36 @@
 .task-manager{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 3rem;
     justify-content: center;
-    width: 100%;
-    .list-area{
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+    width: 80%;
+    min-height: 80%;
+    // background-color: #333333;
+    // background-color: #d7c499ef;
+    background-color: #C6CED1;
+    border-radius: 1rem;
+    .left{
+        flex: 0.15;
+        flex-grow: 0;
+        flex-basis: 0;
+        border-radius: .5rem;
+    }
+    .right{
+        flex-grow: 0;
+        flex-basis: 0;
         display: flex;
+        flex: 0.85;
+        border-radius: .5rem;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        background-color: #a6f20e;
+        justify-content: center;
+        background-color: #f5f5f7;       
+        // .list-area{
+        //     display: flex;
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     align-items: center;
+        // }
     }
 }

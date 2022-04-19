@@ -2,15 +2,16 @@ import React from 'react'
 import ListArea from '../list-area/ListArea';
 import PopupWindow from '../popup/popup-window/PopupWindow';
 import Filter from '../filter/Filter';
+import Stat from '../stat/Stat';
 import './taskManager.scss'
 
 function TaskManager() {
     const generateID = () => Math.random().toString(36).substring(5);
     const [tasks, setTasks] = React.useState([
-        {key: generateID(), name: 'Task 1', dueDate: '2020/01/01', complete: false},
-        {key: generateID(), name: 'Task 2', dueDate: '2020/02/03', complete: false},
-        {key: generateID(), name: 'Task 3', dueDate: '2020/05/05', complete: true},
-        {key: generateID(), name: 'Task 4', dueDate: '2020/11/05', complete: true},
+        {key: generateID(), name: 'Task 1', dueDate: '01/01/2022', complete: false},
+        {key: generateID(), name: 'Task 2', dueDate: '04/14/2022', complete: false},
+        {key: generateID(), name: 'Task 3', dueDate: '08/31/2022', complete: false},
+        {key: generateID(), name: 'Task 4', dueDate: '03/11/2022', complete: false},
     ])
 
     const [filter, setFilter] = React.useState('ALL');
@@ -47,18 +48,25 @@ function TaskManager() {
 
     return (
         <div className="task-manager">
-            <Filter
-                filter={filter}
-                onChange={handleFilterChange}
-            />
-            <PopupWindow setTasks={handleAddTask} />
-            <ListArea className="list-area" 
-                tasks={tasks} 
-                setTasks={setTasks} 
-                deleteTask={deleteTask}
-                showTasks={showTasks} 
-                handleEditTask={handleEditTask}
-            />
+            <div className="left">
+                <Stat tasks={tasks} showTasks={showTasks} />
+            </div>
+
+            <div className="right">
+                <Filter
+                    filter={filter}
+                    onChange={handleFilterChange}
+                />
+                <PopupWindow setTasks={handleAddTask} />
+                <ListArea className="list-area" 
+                    tasks={tasks} 
+                    setTasks={setTasks} 
+                    deleteTask={deleteTask}
+                    showTasks={showTasks} 
+                    handleEditTask={handleEditTask}
+                />
+
+            </div>
         </div>
     )
 }

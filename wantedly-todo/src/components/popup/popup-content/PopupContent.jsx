@@ -32,8 +32,12 @@ export default function PopupContent({setTasks, setIsOpen,task}) {
             </div>
             <input type="submit"
                 onClick={()=>{
-                    setTasks( text, date.toLocaleDateString(), task);
-                    setIsOpen(false)
+                    if(text.length > 0 && date !== null && text.trim() !== ''){
+                        setTasks( text, date.toLocaleDateString(), task);
+                        setIsOpen(false)
+                    }else{
+                        alert('Please enter a valid task name and date')
+                    }
                 }}
             />
         </form>
