@@ -2,6 +2,7 @@ import './listArea.scss';
 import Task from '../task-list/task/Task';
 import React from 'react';
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+//TODO: since "react-beautiful-dnd" doesn't support matrix, use "react-dnd"
 
 const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
