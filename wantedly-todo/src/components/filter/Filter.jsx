@@ -2,6 +2,7 @@ import './filter.scss'
 export default function Filter({ value, onChange }) {
     const handleClick = (key, e) => {
         e.preventDefault();
+        console.log('handleClick in Filter called');
         onChange(key);
     };
 

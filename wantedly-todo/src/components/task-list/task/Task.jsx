@@ -24,7 +24,7 @@ const modalStyle = {
     }
 };
 
-export default function Task({key, task, onMarked, deleteTask, handleEditTask}) {
+export default function Task({task, onMarked, deleteTask, handleEditTask}) {
     const handleChange = () => {
         onMarked(task);
     };
@@ -37,15 +37,7 @@ export default function Task({key, task, onMarked, deleteTask, handleEditTask}) 
         <div className = {task.complete ?  "panel-block active" : "panel-block"}>
             <div className="task-container">
                 
-                    {/* <Box 
-                    className = {task.complete ?  "box active" : "box"}
-                    sx={{
-                        border: '1px solid grey',
-                    }}
-                    ></Box> */}
-                
                 <input 
-                    className='check-box'
                     type="checkbox"
                     checked={task.complete}
                     onChange={handleChange}
@@ -65,7 +57,7 @@ export default function Task({key, task, onMarked, deleteTask, handleEditTask}) 
                         <ModeEditIcon fontSize='medium' className='edit-icon' onClick={setIsOpen}></ModeEditIcon>
                         <Modal 
                             style={modalStyle}
-                            isOpen={modalIsOpen}
+                            isOpen={Boolean(modalIsOpen)}
                             onRequestClose={() => setIsOpen(false)}
                             closeTimeoutMS={500}
                             shouldCloseOnEsc={true}

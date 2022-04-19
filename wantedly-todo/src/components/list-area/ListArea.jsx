@@ -45,7 +45,6 @@ const ListArea = ({tasks, setTasks, deleteTask, showTasks, handleEditTask}) => {
                             <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="listarea-task">
                                 
                                 <Task 
-                                    key={item.key} 
                                     task={item}  
                                     onMarked={handleChecked} 
                                     deleteTask={deleteTask} 

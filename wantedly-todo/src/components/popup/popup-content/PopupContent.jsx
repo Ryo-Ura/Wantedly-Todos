@@ -17,7 +17,7 @@ export default function PopupContent({setTasks, setIsOpen,task}) {
             <div className="input-field">
                 <div>Task Name</div>
                 <input
-                    class="input"
+                    // class="input"
                     type="text"
                     placeholder="Enter to add"
                     value={text}

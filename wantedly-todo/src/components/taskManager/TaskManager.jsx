@@ -22,12 +22,21 @@ function TaskManager() {
         if (filter === 'DONE') return task.complete;
         return null;
     });
-
-    const deleteTask = (key) => {
+    // const showTask = React.useCallback(tasks.filter(task=>{
+    //     if (filter === 'ALL') return true;
+    //     if (filter === 'TODO') return !task.complete;
+    //     if (filter === 'DONE') return task.complete;
+    //     return null;
+    // }), []);
+    React.useEffect(()=>{
+        console.log('parents have changed');
+    })
+    
+    const deleteTask = React.useCallback((key)=>{
         const newTask = tasks.filter(task => task.key !== key);
         setTasks(newTask);
-    }
-    const handleAddTask = (name, date) => {
+    },[tasks])
+    const handleAddTask = React.useCallback((name, date) => {
         const newTask = {
             key: generateID(),
             name: name,
@@ -35,21 +44,19 @@ function TaskManager() {
             complete: false
         }
         setTasks([...tasks, newTask]);
-    }
+    },[tasks])
 
     const handleEditTask =(name, date, task) => {
         task.name = name;
         task.dueDate = date;
     }
 
-    React.useEffect(() => {
-        console.log('tasks', tasks);
-    }, [tasks])
+    const statMemo = React.useMemo(() => <Stat tasks={tasks} showTasks={showTasks} />, [tasks, showTasks]);
 
     return (
         <div className="task-manager">
             <div className="left">
-                <Stat tasks={tasks} showTasks={showTasks} />
+                {statMemo}
             </div>
 
             <div className="right">

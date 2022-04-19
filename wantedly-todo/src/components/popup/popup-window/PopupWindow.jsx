@@ -27,7 +27,7 @@ export default function PopupWindow({setTasks, task}) {
             <button className="new-task" onClick={() => {setIsOpen(true)}} >New Task</button>
             <Modal 
                 style={modalStyle}
-                isOpen={modalIsOpen}
+                isOpen={modalIsOpen.valueOf()}
                 onRequestClose={() => setIsOpen(false)}
                 closeTimeoutMS={500}
                 shouldCloseOnEsc={true}
