@@ -8,7 +8,7 @@ You may also see any lint errors in the console.
 
 ## note
 タスクの状態に基づき表示タスクの変更\
-useMemo, useCallbackの利用で今後Componentが増えた際の無駄なページのリフレッシュを減らす\
+useMemo, useCallbackの利用で今後Componentが増えた際の無駄なページのリフレッシュを減らす
 
 <p align="center">
   <img src="wantedly-todo/public/assets/wantedlyTodo.png" height="500px">
@@ -18,4 +18,5 @@ Improvements. \
 -handle multipule users by storig data to json file or a server.\
 -implement drag and drop functionality\
 -sort items based on the due date\
--write in TypeScript instead of JavaScript
+-write in TypeScript instead of JavaScript\
+-(to implement Dnd, https://www.wantedly.com/companies/wantedly/post_articles/386188 maybe helpful)
