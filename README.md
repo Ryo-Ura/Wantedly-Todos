@@ -11,5 +11,5 @@ You may also see any lint errors in the console.
 useMemo, useCallbackの利用で今後Componentが増えた際の無駄なページのリフレッシュを減らす
 
 <p align="center">
-  <img src="public/assets/wantedlyTodo.png" height="500px">
+  <img src="wantedly-todo/public/assets/wantedlyTodo.png" height="500px">
 </p>
