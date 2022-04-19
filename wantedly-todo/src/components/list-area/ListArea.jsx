@@ -17,7 +17,6 @@ const ListArea = ({tasks, setTasks, deleteTask, showTasks, handleEditTask}) => {
         if (result.destination.index === result.source.index) 
             return;
         const projects = reorder(tasks,result.source.index, result.destination.index);
-        //store reordered state.
         setTasks(projects)
     }
     const handleChecked = (checked) => {
